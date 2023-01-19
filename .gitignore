@@ -452,3 +452,5 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+dotnet-sdk-7.0.101-win-x64.exe
