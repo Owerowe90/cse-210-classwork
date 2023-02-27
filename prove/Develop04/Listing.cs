@@ -12,6 +12,9 @@ class Listing : Activity
     public override void RunActivity()
     {
         Console.WriteLine("Starting Listing Activity...");
+        Thread.Sleep(2000);
+        Console.WriteLine("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+        Thread.Sleep(3000);
         Console.Write("Starting in ");
         for (int i = 3; i >= 1; i--) {
             Console.Write(i + "...");
