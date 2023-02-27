@@ -12,9 +12,11 @@ class Listing : Activity
     public override void RunActivity()
     {
         Console.WriteLine("Starting Listing Activity...");
-        Thread.Sleep(2000);
+        spinner();
+        // Thread.Sleep(2000);
         Console.WriteLine("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
-        Thread.Sleep(3000);
+        spinner();
+        // Thread.Sleep(3000);
         Console.Write("Starting in ");
         for (int i = 3; i >= 1; i--) {
             Console.Write(i + "...");
@@ -22,12 +24,15 @@ class Listing : Activity
         }
 
         Console.WriteLine("You have " + duration + " seconds to list as many items as you can.");
-        Thread.Sleep(1000);
+        spinner();
+        // Thread.Sleep(1000);
         Random rnd = new Random();
         string prompt = prompts[rnd.Next(prompts.Length)];
         Console.WriteLine("Here is the prompt:");
+
         Thread.Sleep(2000);
         Console.WriteLine(prompt);
+
         Thread.Sleep(3000);
         Console.WriteLine("\n\nBegin listing items:");
 
@@ -45,7 +50,8 @@ class Listing : Activity
         Console.Clear();
         Console.WriteLine($"You listed {itemCnt} items.");
         Console.WriteLine("Thank you for completing the Listing Activity! :)");
-        Thread.Sleep(2000);
+        spinner();
+        // Thread.Sleep(2000);
     }
     }
     

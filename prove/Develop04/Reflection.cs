@@ -24,9 +24,11 @@ class Reflection: Activity {
     public override void RunActivity() {
         // inherited RunActivity will go here! 
         Console.WriteLine("Starting Reflection Activity...");
-        Thread.Sleep(2000);
+        // Thread.Sleep(2000);
+        spinner();
         Console.WriteLine("This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
-        Thread.Sleep(3000);
+        // Thread.Sleep(3000);
+        spinner();
         Console.Write("Starting in ");
         for (int i = 3; i >= 1; i--) {
             Console.Write(i + "...");
@@ -52,7 +54,8 @@ class Reflection: Activity {
         }
         Console.Clear();
         Console.WriteLine("Thank you for completing the Reflection Activity! :)");
-        Thread.Sleep(2000);
+        spinner();
+        // Thread.Sleep(2000);
     }
 }
 }
