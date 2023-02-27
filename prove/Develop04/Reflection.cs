@@ -20,20 +20,13 @@ class Reflection: Activity {
         "How can you keep this experience in mind in the future?"
     };
 
+    public string reflection = "Reflection";
+    public string desc_ref = "This activity will help you reflect on times in your life when you have shown strength and resilience.\n This will help you recognize the power you have and how you can use it in other aspects of your life.";
 
     public override void RunActivity() {
-        // inherited RunActivity will go here! 
-        Console.WriteLine("Starting Reflection Activity...");
-        // Thread.Sleep(2000);
+        WhichAct(reflection, desc_ref);
         spinner();
-        Console.WriteLine("This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
-        // Thread.Sleep(3000);
-        spinner();
-        Console.Write("Starting in ");
-        for (int i = 3; i >= 1; i--) {
-            Console.Write(i + "...");
-            System.Threading.Thread.Sleep(1000);
-        }
+        Start();
         Console.WriteLine("GO!");
 
         // Select a random prompt
