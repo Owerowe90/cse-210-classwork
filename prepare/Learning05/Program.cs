@@ -14,9 +14,6 @@ class Program
 
         Circle s3 = new Circle("Green", 6);
         shapes.Add(s3);
-        // Console.WriteLine(s1.GetArea());
-        // Console.WriteLine(s2.GetArea());
-        // Console.WriteLine(s3.GetArea());
 
         foreach (Shape i in shapes)
         {
