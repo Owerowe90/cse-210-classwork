@@ -1,24 +1,31 @@
-using System;
-using System.Collections.Generic;
+class Eternal : Goal {
+    public Eternal(string type) : base(type) {}
 
-namespace goalz
-{
-    public class Eternal : GoalTemp
-    {
-        string goal_string;
-        
-        public Eternal(string goal_name, string desc, int points) : base (goal_name, desc, points)
-        {
-            
-        }
+    public override void CreateGoals() {
+        var name = GetInput("What is the name of the goal: ");
+        Name = name;
 
-        public override string ConvertString()
-        {
-            goal_string = $"{base._complete} | {base._goal_name} - {base._desc}";
-            return goal_string;
-        }
+        var description = GetInput("What is a short description of the goal: ");
+        Description = description;
 
+        var points = GetInput("How many points are associated with the goal: ");
+        Points = ParseInt(points);
+    }
 
+    public override void SetComplete(Handler handler, int goalNum) {
+        GetHandler(handler);
+        complete = true;
+        Console.WriteLine($"\nCongrats You earned {Points} points!!\n");
+        handler.AddPointTotal(Points);
+    }
 
+    private string GetInput(string prompt) {
+        Console.Write(prompt);
+        return Console.ReadLine();
+    }
+
+    private int ParseInt(string input) {
+        int.TryParse(input, out int value);
+        return value;
     }
 }

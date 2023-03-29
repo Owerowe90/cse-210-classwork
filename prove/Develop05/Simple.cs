@@ -1,26 +1,23 @@
-using System;
-using System.Collections.Generic;
+class Simple : Goal {
+    public Simple(string type) : base(type) { }
 
-namespace goalz
-{
-    public class Simple : GoalTemp
-    {
-
-        string goal_string;
-        
-        public Simple(string goal_name, string desc, int points) : base (goal_name, desc, points, num_comp, xtra_points)
-        {
-            
-        }
-
-        public override string ConvertString()
-        {
-            goal_string = $"{base._complete} | {base._goal_name} - {base._desc}";
-            return goal_string;
-        }
-        
-
-
-
+    public override void CreateGoals() {
+        var name = PromptInput("What is the name of the goal: ");
+        var description = PromptInput("What is a short description of the goal: ");
+        var points = PromptInt("How many points are associated with the goal: ");
+        Name = name;
+        Description = description;
+        Points = points;
+    }
+    
+    private static string PromptInput(string prompt) {
+        Console.Write(prompt);
+        return Console.ReadLine();
+    }
+    
+    private static int PromptInt(string prompt) {
+        Console.Write(prompt);
+        int.TryParse(Console.ReadLine(), out int result);
+        return result;
     }
 }
